@@ -4,6 +4,10 @@ namespace Mysql_project
 {
     internal class Program
     {
+        /**
+         * dotnet add package Microsoft.EntityFrameworkCore --version 8.0.5
+         * dotnet add package MySql.EntityFrameworkCore --version 8.0.5
+         */
         static void Main(string[] args)
         {
             string userName = null;
