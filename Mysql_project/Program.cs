@@ -6,9 +6,30 @@ namespace Mysql_project
     {
         static void Main(string[] args)
         {
+            string userName = null;
+            while (userName == null)
+            {
+                Console.WriteLine("Please enter a username");
+                userName = Console.ReadLine();
+            }
+
+            string password = null;
+            while (password == null)
+            {
+                Console.WriteLine("Please enter a password");
+                password = Console.ReadLine();
+            }
+
+            User newUser = new User { Name = userName, Password = password };
+
             using (AppDbContext context = new AppDbContext())
             {
-                context.Database.EnsureCreated();
+                context.Users.Add(newUser);
+                context.SaveChanges();
+
+
+                Console.WriteLine("Current users in Database:");
+                context.Users.ToList().ForEach(s =>  Console.WriteLine($" -{s.Name}"));
             }
         }
     }
