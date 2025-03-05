@@ -1,4 +1,7 @@
-﻿namespace Database_project
+﻿using Microsoft.EntityFrameworkCore;
+using Database_project.Models;
+
+namespace Database_project
 {
     internal class Program
     {
