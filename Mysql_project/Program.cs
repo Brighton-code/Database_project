@@ -10,6 +10,11 @@ namespace Mysql_project
          */
         static void Main(string[] args)
         {
+            using (AppDbContext db = new AppDbContext())
+            {
+                db.Database.EnsureCreated();
+            }
+
             string userName = null;
             while (userName == null)
             {
